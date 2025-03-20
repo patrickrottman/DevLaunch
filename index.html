@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevLaunch | Free Hosting Resources</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch" class="theme-switch">
+        <label for="theme-switch" class="theme-switch-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="ball"></span>
+        </label>
+    </div>
+
+    <header class="hero">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="logo.svg" alt="DevLaunch Logo" class="logo-icon">
+                    <span>Dev</span>Launch
+                </div>
+                <div class="nav-links">
+                    <a href="#static-hosting" class="nav-link">Static Hosting</a>
+                    <a href="#databases" class="nav-link">Databases</a>
+                    <a href="#serverless" class="nav-link">Cloud Functions</a>
+                    <a href="#auth" class="nav-link">Authentication</a>
+                    <a href="#ai" class="nav-link">AI Services</a>
+                </div>
+            </nav>
+            <div class="hero-content">
+                <h1>Free Hosting Solutions <span class="gradient-text">for Web Apps</span></h1>
+                <p>Launch your projects with zero-cost, professional-grade hosting services</p>
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-input" placeholder="Search resources...">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="filters">
+                <div class="filter-label">Filter by:</div>
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="static-hosting">Static Hosting</button>
+                <button class="filter-btn" data-filter="databases">Databases</button>
+                <button class="filter-btn" data-filter="serverless">Cloud Functions</button>
+                <button class="filter-btn" data-filter="auth">Authentication</button>
+                <button class="filter-btn" data-filter="ai">AI Services</button>
+            </div>
+
+            <div id="results-count" class="results-count">Showing all 23 resources</div>
+
+            <section id="static-hosting" class="category-section" data-category="static-hosting">
+                <h2 class="section-title">Static Site Hosting <span class="label">Free Tier</span></h2>
+                <div class="resources-grid">
+                    <div class="resource-card" data-provider="github">
+                        <div class="card-header">
+                            <div class="provider-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <h3>GitHub Pages</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Hosts static websites directly from a GitHub repository. Free for personal and organization use.</p>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> ~100 GB/month bandwidth</li>
+                                <li><i class="fas fa-check"></i> 1 GB max site size</li>
+                                <li><i class="fas fa-check"></i> Free SSL certificates</li>
+                                <li><i class="fas fa-check"></i> Custom domain support</li>
+                            </ul>
+                            <div class="limitations">
+                                <i class="fas fa-exclamation-circle"></i> No server-side code (HTML, CSS, JS only)
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site" class="btn" target="_blank">
+                                <i class="fas fa-book"></i> Setup Guide
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-provider="firebase">
+                        <div class="card-header">
+                            <div class="provider-icon firebase">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <h3>Firebase Hosting</h3>
+                            <span class="provider google">Google</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Google Firebase's static web hosting with the Spark Plan.</p>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> 1 GB storage</li>
+                                <li><i class="fas fa-check"></i> 10 GB/month data transfer</li>
+                                <li><i class="fas fa-check"></i> Free SSL certificates</li>
+                                <li><i class="fas fa-check"></i> Global CDN</li>
+                            </ul>
+                            <div class="benefits">
+                                <i class="fas fa-plus-circle"></i> Supports single-page apps and HTTP functions integration
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://firebase.google.com/docs/hosting/quickstart" class="btn" target="_blank">
+                                <i class="fas fa-book"></i> Setup Guide
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-provider="aws">
+                        <div class="card-header">
+                            <div class="provider-icon aws">
+                                <i class="fab fa-aws"></i>
+                            </div>
+                            <h3>AWS Amplify Hosting</h3>
+                            <span class="provider amazon">Amazon</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Provides free static web hosting with a global CDN, free SSL, and continuous deployment from Git.</p>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> 5 GB storage</li>
+                                <li><i class="fas fa-check"></i> 15 GB/month bandwidth</li>
+                                <li><i class="fas fa-check"></i> Free SSL certificates</li>
+                                <li><i class="fas fa-check"></i> Global CDN</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://docs.aws.amazon.com/amplify/latest/userguide/getting-started.html" class="btn" target="_blank">
+                                <i class="fas fa-book"></i> Setup Guide
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-provider="cloudflare">
+                        <div class="card-header">
+                            <div class="provider-icon cloudflare">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <h3>Cloudflare Pages</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Deploy static sites to Cloudflare's global edge network. Completely free for unlimited sites.</p>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> Unlimited bandwidth</li>
+                                <li><i class="fas fa-check"></i> 500 builds per month</li>
+                                <li><i class="fas fa-check"></i> Up to 20k files per site</li>
+                                <li><i class="fas fa-check"></i> Global edge network</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://developers.cloudflare.com/pages/get-started/" class="btn" target="_blank">
+                                <i class="fas fa-book"></i> Setup Guide
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-provider="azure">
+                        <div class="card-header">
+                            <div class="provider-icon azure">
+                                <i class="fab fa-microsoft"></i>
+                            </div>
+                            <h3>Azure Static Web Apps</h3>
+                            <span class="provider microsoft">Microsoft</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Microsoft's offering for hosting static content and serverless APIs.</p>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> 100 GB bandwidth/month</li>
+                                <li><i class="fas fa-check"></i> 2 custom domains</li>
+                                <li><i class="fas fa-check"></i> Free SSL certificates</li>
+                                <li><i class="fas fa-check"></i> Global CDN distribution</li>
+                            </ul>
+                            <div class="benefits">
+                                <i class="fas fa-plus-circle"></i> Integrated authentication and authorization
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://learn.microsoft.com/en-us/azure/static-web-apps/getting-started" class="btn" target="_blank">
+                                <i class="fas fa-book"></i> Setup Guide
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="databases" class="category-section" data-category="databases">
+                <h2 class="section-title">Managed Databases <span class="label">Free Tier</span></h2>
+                <div class="resources-grid">
+                    <div class="resource-card" data-provider="firebase">
+                        <div class="card-header">
+                            <div class="provider-icon firebase">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <h3>Firebase Firestore</h3>
+                            <span class="provider google">Google</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Serverless NoSQL document database (part of Google Firebase). The Spark free tier.</p>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> 1 GiB of storage</li>
+                                <li><i class="fas fa-check"></i> 50k document reads/day</li>
+                                <li><i class="fas fa-check"></i> 20k writes/day</li>
+                                <li><i class="fas fa-check"></i> 20k deletes/day</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://firebase.google.com/docs/firestore/quickstart" class="btn" target="_blank">
+                                <i class="fas fa-book"></i> Setup Guide
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-provider="aws">
+                        <div class="card-header">
+                            <div class="provider-icon aws">
+                                <i class="fab fa-aws"></i>
+                            </div>
+                            <h3>AWS DynamoDB</h3>
+                            <span class="provider amazon">Amazon</span>
+                        </div>
+                        <div class="card-body">
+                            <p>NoSQL key-value and document database. Free tier includes generous resources for applications.</p>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> 25 GB storage</li>
+                                <li><i class="fas fa-check"></i> 25 WCU and 25 RCU</li>
+                                <li><i class="fas fa-check"></i> Up to 200M requests/month</li>
+                                <li><i class="fas fa-check"></i> Always free tier</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html" class="btn" target="_blank">
+                                <i class="fas fa-book"></i> Setup Guide
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-provider="cloudflare">
+                        <div class="card-header">
+                            <div class="provider-icon cloudflare">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <h3>Cloudflare D1</h3>
+                            <span class="provider-status">Beta</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Cloudflare's serverless SQL database (currently in Beta).</p>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> 500,000 requests/month</li>
+                                <li><i class="fas fa-check"></i> 1 GB storage</li>
+                                <li><i class="fas fa-check"></i> SQL-based queries</li>
+                            </ul>
+                            <div class="limitations">
+                                <i class="fas fa-exclamation-circle"></i> Beta service - limits may change
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://developers.cloudflare.com/d1/" class="btn" target="_blank">
+                                <i class="fas fa-book"></i> Setup Guide
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-provider="azure">
+                        <div class="card-header">
+                            <div class="provider-icon azure">
+                                <i class="fab fa-microsoft"></i>
+                            </div>
+                            <h3>Azure Cosmos DB</h3>
+                            <span class="provider microsoft">Microsoft</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Microsoft's globally distributed, multi-model database service.</p>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> 1000 RU/s throughput</li>
+                                <li><i class="fas fa-check"></i> 25 GB storage</li>
+                                <li><i class="fas fa-check"></i> Global distribution</li>
+                                <li><i class="fas fa-check"></i> Multiple APIs (SQL, MongoDB, etc.)</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://learn.microsoft.com/en-us/azure/cosmos-db/free-tier" class="btn" target="_blank">
+                                <i class="fas fa-book"></i> Setup Guide
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="serverless" class="category-section" data-category="serverless">
+                <h2 class="section-title">Cloud Functions <span class="label">Free Tier</span></h2>
+                <div class="resources-grid">
+                    <div class="resource-card" data-provider="firebase">
+                        <div class="card-header">
+                            <div class="provider-icon firebase">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <h3>Firebase Cloud Functions</h3>
+                            <span class="provider google">Google</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Serverless functions triggered by events with the Spark Plan.</p>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> 2 million invocations/month</li>
+                                <li><i class="fas fa-check"></i> 400,000 GB-seconds compute time</li>
+                                <li><i class="fas fa-check"></i> 5 GB outbound networking</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://firebase.google.com/docs/functions/get-started" class="btn" target="_blank">
+                                <i class="fas fa-book"></i> Setup Guide
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-provider="github">
+                        <div class="card-header">
+                            <div class="provider-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <h3>GitHub Actions</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Can be used for simple serverless automation.</p>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> Unlimited minutes for public repos</li>
+                                <li><i class="fas fa-check"></i> 2,000 minutes/month for private repos</li>
+                                <li><i class="fas fa-check"></i> CI/CD pipeline integration</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://docs.github.com/en/actions/learn-github-actions/introduction-to-github-actions" class="btn" target="_blank">
+                                <i class="fas fa-book"></i> Setup Guide
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-provider="aws">
+                        <div class="card-header">
+                            <div class="provider-icon aws">
+                                <i class="fab fa-aws"></i>
+                            </div>
+                            <h3>AWS Lambda</h3>
+                            <span class="provider amazon">Amazon</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Run backend code on-demand with Amazon's Lambda service.</p>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> 1 million invocations/month</li>
+                                <li><i class="fas fa-check"></i> 400,000 GB-seconds compute time/month</li>
+                                <li><i class="fas fa-check"></i> Multiple language runtimes</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html" class="btn" target="_blank">
+                                <i class="fas fa-book"></i> Setup Guide
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-provider="cloudflare">
+                        <div class="card-header">
+                            <div class="provider-icon cloudflare">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <h3>Cloudflare Workers</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Deploy JavaScript/TypeScript functions at Cloudflare's edge.</p>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> 100,000 requests/day</li>
+                                <li><i class="fas fa-check"></i> Up to 10ms CPU time per request</li>
+                                <li><i class="fas fa-check"></i> Global edge deployment</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://developers.cloudflare.com/workers/get-started/guide/" class="btn" target="_blank">
+                                <i class="fas fa-book"></i> Setup Guide
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-provider="azure">
+                        <div class="card-header">
+                            <div class="provider-icon azure">
+                                <i class="fab fa-microsoft"></i>
+                            </div>
+                            <h3>Azure Functions</h3>
+                            <span class="provider microsoft">Microsoft</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Microsoft's event-driven serverless compute platform.</p>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> 1 million executions/month</li>
+                                <li><i class="fas fa-check"></i> 400,000 GB-seconds/month</li>
+                                <li><i class="fas fa-check"></i> Multiple language support</li>
+                                <li><i class="fas fa-check"></i> Integrated with Azure services</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview" class="btn" target="_blank">
+                                <i class="fas fa-book"></i> Setup Guide
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="auth" class="category-section" data-category="auth">
+                <h2 class="section-title">Authentication <span class="label">Free Tier</span></h2>
+                <div class="resources-grid">
+                    <div class="resource-card" data-provider="firebase">
+                        <div class="card-header">
+                            <div class="provider-icon firebase">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <h3>Firebase Authentication</h3>
+                            <span class="provider google">Google</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Turnkey user authentication by Google Firebase.</p>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> Unlimited users</li>
+                                <li><i class="fas fa-check"></i> Email/Password authentication</li>
+                                <li><i class="fas fa-check"></i> OAuth providers (Google, Facebook, GitHub, etc.)</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://firebase.google.com/docs/auth" class="btn" target="_blank">
+                                <i class="fas fa-book"></i> Setup Guide
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-provider="aws">
+                        <div class="card-header">
+                            <div class="provider-icon aws">
+                                <i class="fab fa-aws"></i>
+                            </div>
+                            <h3>AWS Cognito</h3>
+                            <span class="provider amazon">Amazon</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Authentication service that includes various sign-in options.</p>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> 50,000 free monthly active users</li>
+                                <li><i class="fas fa-check"></i> Email, phone, or OAuth providers</li>
+                                <li><i class="fas fa-check"></i> Multi-factor authentication</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html" class="btn" target="_blank">
+                                <i class="fas fa-book"></i> Setup Guide
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-provider="cloudflare">
+                        <div class="card-header">
+                            <div class="provider-icon cloudflare">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <h3>Cloudflare Access</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Secure authentication for apps using Cloudflare Zero Trust.</p>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> Free for up to 50 users</li>
+                                <li><i class="fas fa-check"></i> Zero Trust security model</li>
+                                <li><i class="fas fa-check"></i> Multiple authentication methods</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://developers.cloudflare.com/access/" class="btn" target="_blank">
+                                <i class="fas fa-book"></i> Setup Guide
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-provider="azure">
+                        <div class="card-header">
+                            <div class="provider-icon azure">
+                                <i class="fab fa-microsoft"></i>
+                            </div>
+                            <h3>Azure AD B2C</h3>
+                            <span class="provider microsoft">Microsoft</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Microsoft's identity management service for consumer-facing applications.</p>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> 50,000 monthly active users</li>
+                                <li><i class="fas fa-check"></i> Social identity providers (Facebook, Google, etc.)</li>
+                                <li><i class="fas fa-check"></i> Customizable login experiences</li>
+                                <li><i class="fas fa-check"></i> Multi-factor authentication</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://learn.microsoft.com/en-us/azure/active-directory-b2c/overview" class="btn" target="_blank">
+                                <i class="fas fa-book"></i> Setup Guide
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ai" class="category-section" data-category="ai">
+                <h2 class="section-title">AI Services <span class="label">Free Tier</span></h2>
+                <div class="resources-grid">
+                    <div class="resource-card" data-provider="firebase">
+                        <div class="card-header">
+                            <div class="provider-icon firebase">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>Firebase ML Kit</h3>
+                            <span class="provider google">Google</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Pre-trained machine learning APIs for text recognition, image labeling, and translation.</p>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> Unlimited on-device ML</li>
+                                <li><i class="fas fa-check"></i> 1,000 cloud translations/day</li>
+                                <li><i class="fas fa-check"></i> Vision, text and language APIs</li>
+                            </ul>
+                            <div class="benefits">
+                                <i class="fas fa-plus-circle"></i> Easy integration with Firebase apps
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://firebase.google.com/docs/ml" class="btn" target="_blank">
+                                <i class="fas fa-book"></i> Setup Guide
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-provider="aws">
+                        <div class="card-header">
+                            <div class="provider-icon aws">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h3>AWS Bedrock</h3>
+                            <span class="provider amazon">Amazon</span>
+                        </div>
+                        <div class="card-body">
+                            <p>API access to foundation models from AI providers like Anthropic (Claude), Stability AI and AI21.</p>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> 750,000 characters of text generation/month</li>
+                                <li><i class="fas fa-check"></i> 5 GB vector search per month</li>
+                                <li><i class="fas fa-check"></i> Includes Claude and Stable Diffusion</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/getting-started.html" class="btn" target="_blank">
+                                <i class="fas fa-book"></i> Setup Guide
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-provider="cloudflare">
+                        <div class="card-header">
+                            <div class="provider-icon cloudflare">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <h3>Cloudflare AI Gateway</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Proxy service that optimizes AI API requests to reduce cost and improve performance.</p>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> 100,000 requests per month</li>
+                                <li><i class="fas fa-check"></i> Request caching & optimization</li>
+                                <li><i class="fas fa-check"></i> Multiple model support</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://developers.cloudflare.com/ai-gateway/" class="btn" target="_blank">
+                                <i class="fas fa-book"></i> Setup Guide
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card" data-provider="azure">
+                        <div class="card-header">
+                            <div class="provider-icon azure">
+                                <i class="fas fa-comment-dots"></i>
+                            </div>
+                            <h3>Azure AI Studio</h3>
+                            <span class="provider microsoft">Microsoft</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Microsoft's platform for building, testing, and deploying AI applications, including Azure OpenAI.</p>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> $500 in free credits for new accounts</li>
+                                <li><i class="fas fa-check"></i> Access to GPT and other models</li>
+                                <li><i class="fas fa-check"></i> Easy deployment & integration</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://azure.microsoft.com/en-us/products/ai-studio" class="btn" target="_blank">
+                                <i class="fas fa-book"></i> Setup Guide
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.svg" alt="DevLaunch Logo" class="logo-icon">
+                    <span>Dev</span>Launch
+                </div>
+                <p>Free resources to help students launch their web projects</p>
+                <div class="social-links">
+                    <a href="http://github.patrickrottman.com" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="http://linkedin.patrickrottman.com" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="about-section">
+                <h3>About This Resource</h3>
+                <p>The information presented on this site is accurate as of the creation date but may be subject to change. Cloud service providers regularly update their free tier offerings, limitations, and features. We recommend verifying the latest terms directly with each provider before building your projects.</p>
+                <p>This resource is designed for educational purposes to help students and developers discover free hosting options for their web applications.</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DevLaunch. Made with <i class="fas fa-heart"></i> for students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-action">
+        <button id="scroll-top" class="scroll-top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
