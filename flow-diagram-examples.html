@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow Diagram Examples</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Flow Diagram Examples</h1>
+        <p>This page showcases examples of CSS-based flow diagrams for use in the free-web-hosting project.</p>
+        
+        <section>
+            <h2>AWS Cognito Authentication Flow</h2>
+            <div class="flow-diagram">
+                <span class="flow-node">User</span>
+                <span class="flow-arrow">→</span>
+                <span class="flow-node">Website Sign-in Form</span>
+                <span class="flow-arrow">→</span>
+                <span class="flow-node">Cognito User Pool</span>
+                <span class="flow-arrow">→</span>
+                <span class="flow-node">JWT Token</span>
+                <span class="flow-arrow">→</span>
+                <span class="flow-node">Application</span>
+                <br>
+                <span class="flow-arrow" style="transform: rotate(90deg); display: inline-block; margin-left: 250px;">→</span>
+                <span class="flow-arrow" style="transform: rotate(-90deg); display: inline-block; margin-left: 150px;">→</span>
+                <br>
+                <span class="flow-node" style="margin-left: 150px;">Access Protected Resources</span>
+            </div>
+        </section>
+        
+        <section>
+            <h2>AWS Lambda Serverless Flow</h2>
+            <div class="flow-diagram">
+                <span class="flow-node">Client</span>
+                <span class="flow-arrow">→</span>
+                <span class="flow-node">API Gateway</span>
+                <span class="flow-arrow">→</span>
+                <span class="flow-node">Lambda Function</span>
+                <span class="flow-arrow">→</span>
+                <span class="flow-node">DynamoDB</span>
+                <br>
+                <span class="flow-arrow" style="transform: rotate(90deg); display: inline-block; margin-left: 80px;">→</span>
+                <span class="flow-arrow" style="transform: rotate(-90deg); display: inline-block; margin-left: 300px;">→</span>
+                <br>
+                <span class="flow-node" style="margin-left: 100px;">Response returned to client</span>
+            </div>
+            
+            <div class="flow-diagram" style="margin-top: 30px;">
+                <span class="flow-node">File uploaded</span>
+                <span class="flow-arrow">→</span>
+                <span class="flow-node">S3 Bucket</span>
+                <span class="flow-arrow">→</span>
+                <span class="flow-node">Event Trigger</span>
+                <span class="flow-arrow">→</span>
+                <span class="flow-node">Lambda Function</span>
+                <span class="flow-arrow">→</span>
+                <span class="flow-node">Processed result</span>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Cloudflare Access Zero Trust Flow</h2>
+            <div class="flow-diagram">
+                <span class="flow-node">Internet</span>
+                <span class="flow-arrow">→</span>
+                <span class="flow-node">Cloudflare Access</span>
+                <span class="flow-arrow">→</span>
+                <span class="flow-node">Authentication Check</span>
+                <span class="flow-arrow">→</span>
+                <span class="flow-node">Internal Dashboard</span>
+                <br>
+                <span class="flow-arrow" style="transform: rotate(90deg); display: inline-block; margin-left: 150px;">→</span>
+                <br>
+                <span class="flow-node" style="margin-left: 80px;">Unauthorized users stopped</span>
+            </div>
+            
+            <div class="flow-diagram" style="margin-top: 30px;">
+                <div style="display: flex; flex-direction: column; gap: 20px;">
+                    <div>
+                        <span class="flow-node">Developer with GitHub access</span>
+                        <span class="flow-arrow">→</span>
+                        <span class="flow-node">Cloudflare Access</span>
+                        <span class="flow-arrow">→</span>
+                        <span class="flow-node">Staging Environment</span>
+                    </div>
+                    <div>
+                        <span class="flow-node">Client with approved email</span>
+                        <span class="flow-arrow">→</span>
+                        <span class="flow-node">Cloudflare Access</span>
+                        <span class="flow-arrow">→</span>
+                        <span class="flow-node">Permitted based on identity</span>
+                    </div>
+                    <div>
+                        <span class="flow-node">Non-authorized visitors</span>
+                        <span class="flow-arrow">→</span>
+                        <span class="flow-node">Cloudflare Access</span>
+                        <span class="flow-arrow">→</span>
+                        <span class="flow-node">Blocked</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>GitHub Pages Folder Structure</h2>
+            <div class="flow-diagram" style="flex-direction: column; align-items: flex-start;">
+                <span class="flow-node">yourusername.github.io/</span>
+                <div style="margin-left: 20px; display: flex; flex-direction: column; gap: 10px;">
+                    <span class="flow-node">index.html (your homepage)</span>
+                    <span class="flow-node">about.html (about page)</span>
+                    <span class="flow-node">css/</span>
+                    <div style="margin-left: 20px;">
+                        <span class="flow-node">style.css (your styles)</span>
+                    </div>
+                    <span class="flow-node">js/</span>
+                    <div style="margin-left: 20px;">
+                        <span class="flow-node">script.js (your JavaScript)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
