@@ -1,5 +1,6 @@
 // DOM Elements
 const themeSwitch = document.getElementById('theme-switch');
+const beginnerSwitch = document.getElementById('beginner-switch');
 const searchInput = document.getElementById('search-input');
 const filterButtons = document.querySelectorAll('.filter-btn');
 const scrollTopBtn = document.getElementById('scroll-top');
@@ -132,14 +133,29 @@ function updateResultsCount(count) {
     }, 300);
 }
 
-// Scroll to top button
+// Scroll to top button and sticky info bar
 function initScrollToTop() {
+    const stickyInfoBar = document.getElementById('sticky-info-bar');
+    let lastScrollPosition = 0;
+    const scrollThreshold = 300;
+    
     window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
+        const currentScrollPosition = window.pageYOffset;
+        
+        // Show scroll-to-top button
+        if (currentScrollPosition > scrollThreshold) {
             scrollTopBtn.classList.add('visible');
+            
+            // Also show sticky info bar when scrolling down
+            stickyInfoBar.classList.add('visible');
         } else {
             scrollTopBtn.classList.remove('visible');
+            
+            // Hide sticky info bar when near the top
+            stickyInfoBar.classList.remove('visible');
         }
+        
+        lastScrollPosition = currentScrollPosition;
     });
     
     scrollTopBtn.addEventListener('click', () => {
@@ -241,9 +257,86 @@ function initCardLinks() {
     });
 }
 
+// Initialize beginner mode
+function initBeginnerMode() {
+    // Check for saved beginner mode preference
+    const savedBeginnerMode = localStorage.getItem('beginnerMode') === 'true';
+    
+    // Apply saved beginner mode on page load
+    if (savedBeginnerMode) {
+        document.body.classList.add('beginner-mode');
+        beginnerSwitch.checked = true;
+        // Setup toggles immediately if info mode is enabled on load
+        setupExplanationToggles();
+    }
+    
+    // Beginner mode toggle event listener
+    beginnerSwitch.addEventListener('change', () => {
+        if (beginnerSwitch.checked) {
+            document.body.classList.add('beginner-mode');
+            localStorage.setItem('beginnerMode', 'true');
+            
+            // Setup toggles
+            setupExplanationToggles();
+            
+            // Animate explanations toggles with staggered delay
+            document.querySelectorAll('.explanation-toggle').forEach((toggle, index) => {
+                toggle.style.animation = 'fadeIn 0.3s ease-out forwards';
+                toggle.style.animationDelay = `${0.05 * index}s`;
+            });
+        } else {
+            document.body.classList.remove('beginner-mode');
+            localStorage.setItem('beginnerMode', 'false');
+            
+            // Close all explanation contents when turning off detailed info mode
+            document.querySelectorAll('.explanation-content.active').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.querySelectorAll('.explanation-toggle.active').forEach(toggle => {
+                toggle.classList.remove('active');
+            });
+        }
+    });
+}
+
+// Setup click handlers for explanation toggles
+function setupExplanationToggles() {
+    // First remove any existing event listeners to prevent duplicates
+    document.querySelectorAll('.explanation-toggle').forEach(toggle => {
+        const newToggle = toggle.cloneNode(true);
+        toggle.parentNode.replaceChild(newToggle, toggle);
+    });
+    
+    // Then add fresh event listeners
+    document.querySelectorAll('.explanation-toggle').forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            
+            // Toggle active state
+            this.classList.toggle('active');
+            content.classList.toggle('active');
+            
+            // If opening this explanation, close others in the same card
+            if (this.classList.contains('active')) {
+                const parentCard = this.closest('.resource-card');
+                if (parentCard) {
+                    parentCard.querySelectorAll('.explanation-toggle').forEach(otherToggle => {
+                        if (otherToggle !== this && otherToggle.classList.contains('active')) {
+                            otherToggle.classList.remove('active');
+                            otherToggle.nextElementSibling.classList.remove('active');
+                        }
+                    });
+                }
+            }
+        });
+    });
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     initThemeToggle();
+    initBeginnerMode();
+    setupExplanationToggles(); // Call once at startup to ensure toggles are ready
     initSearch();
     initFilters();
     initScrollToTop();
